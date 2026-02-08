@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kılıç Tesisat - İnegöl Doğalgaz, Su ve Yangın Tesisatı</title>
+    
+    <meta name="description" content="Kılıç Tesisat: İnegöl'de profesyonel dogalgaz, su, kalorifer ve yangın tesisatı hizmetleri. 7/24 acil servis ve garantili işçilik ile hizmetinizdeyiz.">
+    <meta name="keywords" content="İnegöl tesisat, dogalgaz tesisatı, su tesisatı, petek temizliği, yangın tesisatı, banyo tadilatı, Kılıç Tesisat, Bursa tesisatçı, şap kesim yerden ısıtma">
+    <meta name="author" content="Kılıç Tesisat">
+    
+    <meta property="og:title" content="Kılıç Tesisat - Profesyonel Tesisat Çözümleri">
+    <meta property="og:description" content="Doğalgazdan su tesisatına kadar tüm mekanik çözümlerle 7/24 hizmetinizdeyiz.">
+    <meta property="og:image" content="unnamed.jpg">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/jpeg" href="unnamed.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- GENEL AYARLAR (TASARIMIN AYNI KALDI) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #121212; color: white; line-height: 1.6; }
+        a { text-decoration: none; }
+
+        /* --- LOGO ALANI (PIRILTILAR KORUNDU) --- */
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .main-logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            position: relative;
+            z-index: 2;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background-color: #000;
+        }
+
+        .logo-container::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150px;
+            height: 150px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 2px dashed #ffffff;
+            z-index: 1;
+            animation: rotateLogo 12s linear infinite;
+            opacity: 0.6;
+        }
+
+        .logo-container::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 130px;
+            height: 130px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            filter: blur(20px);
+            z-index: 0;
+        }
+
+        .logo-container:hover .main-logo {
+            transform: scale(1.1) rotate(5deg);
+            border-color: #fff;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes rotateLogo {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* --- HERO --- */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('arkaplan.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4), 0 0 30px rgba(252, 163, 17, 0.6);
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #ffffff;
+            font-weight: 900;
+            margin-bottom: 40px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.9);
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        /* --- BUTONLAR --- */
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            transition: all 0.4s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+
+        .btn i { transition: 0.4s; }
+        .btn:hover i { transform: scale(1.2) rotate(-10deg); }
+        .btn-red { background: linear-gradient(45deg, #d32f2f, #ff5252); }
+        .btn-red:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(211, 47, 47, 0.6); }
+        .btn-green { background: linear-gradient(45deg, #25d366, #4ce083); }
+        .btn-green:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6); }
+
+        /* --- SABİT WHATSAPP --- */
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* --- HİZMETLER --- */
+        .services-section { width: 100%; max-width: 1100px; margin-bottom: 40px; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 30px; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 5px black; }
+        
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+            gap: 20px; 
+            justify-items: center; 
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, #1e1e1e, #252525);
+            padding: 25px 15px; border-radius: 15px; text-align: center; width: 100%; border: 1px solid #333; border-bottom: 4px solid #fca311;
+            transition: all 0.4s ease; cursor: pointer; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(252, 163, 17, 0.3); background: #2a2a2a; border-color: #fca311; }
+        .service-card i { font-size: 2.5rem; margin-bottom: 15px; color: #fca311; transition: 0.4s; }
+        .service-card:hover i { transform: scale(1.2); color: white; text-shadow: 0 0 10px #fca311; }
+        .service-card p { font-size: 1rem; font-weight: bold; color: #e0e0e0; transition: 0.3s; }
+        .service-card:hover p { color: white; }
+        .card-link { display: block; width: 100%; height: 100%; color: inherit; }
+
+        /* --- VİDEO GALERİ (DÜZENLENEN KISIM) --- */
+        .products-section { background-color: #0a0a0a; padding: 60px 20px; border-top: 1px solid #333; }
+        .products-container { max-width: 1300px; margin: 0 auto; text-align: center; }
+        .products-header { margin-bottom: 40px; }
+        .products-header h2 { color: #fca311; font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; }
+        .products-header p { color: #aaa; font-size: 1.1rem; margin-bottom: 20px;}
+        
+        /* Yeni Beyaz Işıltılı Galeri Butonu */
+        .gallery-link-btn {
+            background: #ffffff; 
+            color: #000; 
+            padding: 15px 40px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 12px; 
+            transition: all 0.4s ease;
+            margin-top: 40px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            border: none;
+        }
+        .gallery-link-btn:hover { 
+            background: #000; 
+            color: #fff; 
+            transform: translateY(-5px) scale(1.05); 
+            box-shadow: 0 0 35px rgba(255, 255, 255, 0.5);
+            border: 1px solid #fff;
+        }
+
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
+        .video-card { background: #000; border-radius: 12px; overflow: hidden; border: 1px solid #333; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: all 0.3s ease; position: relative; }
+        .video-card:hover { border-color: #ffffff; box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+        .video-wrapper { position: relative; width: 100%; height: 480px; background: #000; }
+        .video-wrapper video { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- HARİTA --- */
+        .map-section { background-color: #121212; padding: 50px 20px; text-align: center; border-top: 1px solid #333; }
+        .map-video-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .map-container { border-radius: 15px; overflow: hidden; box-shadow: 0 0 20px rgba(252, 163, 17, 0.2); border: 2px solid #333; height: 400px; }
+        .shop-video-box { position: relative; border-radius: 15px; overflow: hidden; border: 2px solid #fca311; background: #000; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); cursor: pointer; }
+        .shop-video-box video { width: 100%; height: 100%; object-fit: cover; }
+        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.3s; pointer-events: none; }
+        .video-overlay i { font-size: 4rem; color: #fca311; margin-bottom: 10px; text-shadow: 0 0 15px rgba(0,0,0,1); }
+        .video-overlay span { font-weight: bold; letter-spacing: 1px; font-size: 1.2rem; }
+        .address-text { margin-bottom: 20px; font-size: 1.1rem; color: #ccc; }
+
+        /* --- FOOTER --- */
+        footer { background-color: black; padding: 30px 20px; text-align: center; border-top: 4px solid #fca311; }
+        .contact-person { font-size: 1.2rem; margin: 5px 0; }
+
+        /* --- MODAL --- */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; }
+        .modal-box { background: #252525; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; border: 2px solid #fca311; box-shadow: 0 0 20px rgba(252, 163, 17, 0.3); position: relative; }
+        .modal-close { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #aaa; }
+        .modal-title { color: #fca311; margin-bottom: 20px; font-size: 1.5rem; text-transform: uppercase; }
+        .contact-option { display: block; background: #333; color: white; padding: 15px; margin: 10px 0; border-radius: 10px; font-weight: bold; font-size: 1.1rem; transition: 0.3s; border: 1px solid #444; }
+        .contact-option:hover { background: #fca311; color: black; transform: scale(1.02); }
+
+        /* --- TELEFON VE TABLET UYUMU --- */
+        @media (max-width: 900px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.1rem; }
+            
+            .services-grid {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 15px;
+                padding: 10px 10px 20px 10px;
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                scrollbar-width: none;
+            }
+            .services-grid::-webkit-scrollbar { display: none; }
+            
+            .services-grid .card-link {
+                flex: 0 0 calc(50% - 20px);
+                min-width: calc(50% - 20px);
+                scroll-snap-align: start;
+            }
+            .service-card { aspect-ratio: 1/1; height: auto; }
+            .service-card i { font-size: 1.8rem; margin-bottom: 8px; }
+            .service-card p { font-size: 0.8rem; }
+
+            /* Videolar Bölümü - Kaydırılabilir Yapı */
+            .video-grid {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 15px;
+                padding: 10px 10px 20px 10px;
+                scrollbar-width: none;
+            }
+            .video-grid::-webkit-scrollbar { display: none; }
+            
+            .video-card {
+                flex: 0 0 85%;
+                min-width: 85%;
+                scroll-snap-align: center;
+            }
+            .video-wrapper { height: 400px; }
+
+            .map-video-wrapper { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; width: 100%; }
+            .btn { width: 100%; justify-content: center; }
+            .float-wa { width: 50px; height: 50px; font-size: 30px; bottom: 20px; right: 20px; }
+            .gallery-link-btn { width: 90%; justify-content: center; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="modal-close" onclick="closeModal()">×</span>
+            <h3 id="modalTitle" class="modal-title">İletişim Seçin</h3>
+            <a href="#" id="linkAli" class="contact-option"><i class="fa-solid fa-user"></i> Ali Kılıç</a>
+            <a href="#" id="linkEmin" class="contact-option"><i class="fa-solid fa-user"></i> Emin Kılıç</a>
+        </div>
+    </div>
+
+    <div class="float-wa" onclick="openModal('wa')">
+        <i class="fa-brands fa-whatsapp"></i>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="unnamed.jpg" alt="Kılıç Tesisat Logo" class="main-logo">
+        </div>
+        
+        <h1>KILIÇ TESİSAT</h1>
+        <div class="subtitle">T-GAZ YETKİLİ SERVİSİ</div>
+        
+        <div class="cta-buttons">
+            <button class="btn btn-red" onclick="openModal('call')">
+                <i class="fa-solid fa-phone"></i> Hemen Ara
+            </button>
+            <button class="btn btn-green" onclick="openModal('wa')">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp'tan Yaz
+            </button>
+        </div>
+
+        <div class="services-section">
+            <h2 class="section-title">Hizmetlerimiz</h2>
+            <div class="services-grid">
+                <a href="dogalgaz.html" class="card-link"><div class="service-card"><i class="fa-solid fa-fire-flame-curved"></i><p>Doğalgaz<br>Tesisatı</p></div></a>
+                <a href="su-kalorifer.html" class="card-link"><div class="service-card"><i class="fa-solid fa-faucet-drip"></i><p>Su &<br>Kalorifer</p></div></a>
+                <a href="yangin.html" class="card-link"><div class="service-card"><i class="fa-solid fa-fire-extinguisher"></i><p>Yangın<br>Tesisatı</p></div></a>
+                <a href="sap-kesim.html" class="card-link"><div class="service-card"><i class="fa-solid fa-border-all"></i><p>Şap Kesim<br>Isıtma</p></div></a>
+                <a href="vitrifiye.html" class="card-link"><div class="service-card"><i class="fa-solid fa-bath"></i><p>Vitrifiye<br>& Banyo</p></div></a>
+                <a href="mekanik.html" class="card-link"><div class="service-card"><i class="fa-solid fa-screwdriver-wrench"></i><p>Mekanik<br>Tesisat</p></div></a>
+                <a href="galeri.html" class="card-link"><div class="service-card" style="border-bottom-color: white;"><i class="fa-solid fa-images" style="color: white;"></i><p>Müşteri<br>Galerisi</p></div></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="products-section">
+        <div class="products-container">
+            <div class="products-header">
+                <h2>Uygulama Videoları</h2>
+                <p>Uygulamalarımızı inceleyin</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-card"><div class="video-wrapper"><video controls preload="metadata"><source src="urun1.mp4" type="video/mp4"></video></div></div>
+                <div class="video-card"><div class="video-wrapper"><video controls preload="metadata"><source src="urun2.mp4" type="video/mp4"></video></div></div>
+                <div class="video-card"><div class="video-wrapper"><video controls preload="metadata"><source src="urun3.mp4" type="video/mp4"></video></div></div>
+                <div class="video-card"><div class="video-wrapper"><video controls preload="metadata"><source src="urun4.mp4" type="video/mp4"></video></div></div>
+            </div>
+
+            <a href="galeri.html" class="gallery-link-btn">
+                Tüm Galeriyi Gör <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="map-section">
+        <h2 style="color: #fca311; margin-bottom: 30px;">Bizi Ziyaret Edin</h2>
+        <div class="address-text"><i class="fa-solid fa-location-dot"></i> Süleymaniye, Yeşil Bursa Cd. No:25, İnegöl/Bursa</div>
+        <div class="map-video-wrapper">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.1234!2d29.5!3d40.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDAwJzAwLjAiTiAyOcKwMzAnMDAuMCJF!5e0!3m2!1str!2str!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="shop-video-box" onclick="handleVideo()">
+                <video id="promoVideo" poster="afıs1.jpeg"><source src="tanıtım.mp4" type="video/mp4"></video>
+                <div class="video-overlay" id="videoOverlay"><i class="fa-solid fa-play-circle"></i><span>İŞ YERİMİZİ GÖRÜN</span></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3 style="color: #fca311;">İletişim</h3>
+        <div class="contact-person">Ali Kılıç: 0534 623 38 02</div>
+        <div class="contact-person">Emin Kılıç: 0537 362 12 06</div>
+        <div style="margin-top: 20px; font-size: 0.8rem; color: #666;">© 2026 Kılıç Tesisat</div>
+    </footer>
+
+    <script>
+        const numAli = "905346233802";
+        const numEmin = "905373621206";
+        function openModal(type) {
+            const modal = document.getElementById('contactModal');
+            const title = document.getElementById('modalTitle');
+            const linkAli = document.getElementById('linkAli');
+            const linkEmin = document.getElementById('linkEmin');
+            modal.style.display = 'flex';
+            if (type === 'call') {
+                title.innerText = "Kimi Aramak İstersiniz?";
+                linkAli.href = "tel:05346233802";
+                linkEmin.href = "tel:05373621206";
+            } else {
+                title.innerText = "WhatsApp Destek";
+                linkAli.href = "https://wa.me/" + numAli;
+                linkEmin.href = "https://wa.me/" + numEmin;
+            }
+        }
+        function closeModal() { document.getElementById('contactModal').style.display = 'none'; }
+        function handleVideo() {
+            const v = document.getElementById('promoVideo');
+            const overlay = document.getElementById('videoOverlay');
+            if (v.paused) { v.play(); v.controls = true; overlay.style.opacity = '0'; }
+            else { v.pause(); overlay.style.opacity = '1'; }
+        }
+        window.onclick = function(event) { if (event.target.id == 'contactModal') closeModal(); }
+    </script>
+</body>
+</html>

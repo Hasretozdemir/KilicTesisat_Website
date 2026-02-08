@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mekanik Tesisat - Kılıç Tesisat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- GENEL STİLLER --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #0f0f0f; color: #e0e0e0; line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HEADER --- */
+        header {
+            background-color: #181818;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        /* --- METALİK YEŞİL LOGO TASARIMI --- */
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #ffffff 0%, #a5d6a7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 25px rgba(76, 175, 80, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+        
+        .logo i { font-size: 1.6rem; color: #4caf50; -webkit-text-fill-color: initial; }
+
+        .logo:hover {
+            transform: scale(1.02);
+            text-shadow: 0 0 30px rgba(76, 175, 80, 0.6);
+        }
+
+        /* --- YEŞİL IŞIKLI GERİ DÖN BUTONU --- */
+        .back-btn { 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            color: #fff;
+            font-weight: 600;
+            transition: all 0.4s ease;
+        }
+
+        .back-btn:hover { 
+            background: #4caf50;
+            color: #fff;
+            transform: translateX(-5px) scale(1.05);
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+        }
+
+        /* --- İÇERİK --- */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* YEŞİL IŞIKLI GÖRSEL */
+        .service-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(76, 175, 80, 0.4); 
+            margin-bottom: 40px;
+            border: 1px solid #333;
+            display: block;
+        }
+
+        h1 { 
+            font-size: 3rem; 
+            margin-bottom: 25px; 
+            background: linear-gradient(90deg, #4caf50, #81c784);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            text-shadow: 0 0 30px rgba(76, 175, 80, 0.2);
+        }
+        
+        .content-text p { margin-bottom: 20px; font-size: 1.15rem; color: #bbb; }
+
+        /* --- ÖZELLİK KARTLARI --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .feature-card {
+            background: #1a1a1a;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #2a2a2a;
+            transition: 0.4s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #4caf50;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
+        }
+        .feature-card i { font-size: 2.5rem; color: #4caf50; margin-bottom: 15px; }
+        .feature-card:hover i { text-shadow: 0 0 15px #4caf50; }
+        .feature-card h3 { color: white; margin-bottom: 10px; font-size: 1.2rem; }
+        .feature-card p { font-size: 0.9rem; color: #888; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #000;
+            color: #555;
+            font-size: 0.85rem;
+            margin-top: 50px;
+            border-top: 1px solid #222;
+        }
+
+        /* --- MOBİL UYUMLULUK EKLEMELERİ --- */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .logo { font-size: 1.5rem; }
+            .container { margin: 20px auto; padding: 15px; }
+            h1 { font-size: 2rem; text-align: center; }
+            .service-image { height: 300px; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .content-text p { text-align: center; font-size: 1.1rem; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.7rem; }
+            .service-image { height: 220px; }
+            
+            /* Mobilde 2x2 Kare Düzeni */
+            .features-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 12px;
+            }
+            
+            .feature-card { padding: 20px 10px; }
+            .feature-card h3 { font-size: 1rem; }
+            .back-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">
+        <i class="fa-solid fa-gears"></i> KILIÇ TESİSAT
+    </a>
+    
+    <a href="index.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Geri Dön
+    </a>
+</header>
+
+<div class="container">
+    <img src="mekanik.jpeg" alt="Mekanik Tesisat Uygulaması" class="service-image">
+
+    <h1>Mekanik Tesisat Çözümleri</h1>
+
+    <div class="content-text">
+        <p>
+            Binaların kalbi olan mekanik sistemlerin projelendirilmesi ve kurulumunda mühendislik hassasiyetiyle çalışıyoruz.
+        </p>
+        <p>
+            Merkezi sistemler, havalandırma, hidrofor ve pompa çözümlerinde Kılıç Tesisat güvencesiyle hizmetinizdeyiz.
+        </p>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fa-solid fa-industry"></i>
+            <h3>Merkezi Sistem</h3>
+            <p>Kazan dairesi.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-fan"></i>
+            <h3>Havalandırma</h3>
+            <p>Otopark çözümleri.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-water"></i>
+            <h3>Hidrofor</h3>
+            <p>Basınç sistemleri.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-gears"></i>
+            <h3>Mekanik Proje</h3>
+            <p>Profesyonel taahhüt.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Kılıç Tesisat - Mühendislik & Güven
+</footer>
+
+</body>
+</html>

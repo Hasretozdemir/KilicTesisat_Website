@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kılıç Tesisat - Profesyonel Galeri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        :root {
+            --primary: #fca311;
+            --bg-dark: #050505;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-dark); color: white; overflow-x: hidden; }
+
+        header { 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(5, 5, 5, 0.9); 
+            backdrop-filter: blur(20px); 
+            position: fixed; 
+            width: 100%; top: 0; z-index: 1000; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--primary); }
+        .back-btn { color: white; text-decoration: none; font-weight: 500; border: 1px solid #444; padding: 8px 25px; border-radius: 50px; transition: 0.3s; }
+        .back-btn:hover { background: var(--primary); color: black; border-color: var(--primary); }
+
+        /* SLAYDER ALANI */
+        .slider-section {
+            width: 100%;
+            height: 85vh; 
+            margin-top: 75px;
+            background: #000;
+            position: relative;
+        }
+
+        .swiper { width: 100%; height: 100%; }
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            position: relative;
+        }
+
+        .slide-bg-blur {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(30px) brightness(0.3);
+            z-index: 1;
+        }
+
+        .swiper-slide img {
+            position: relative;
+            z-index: 2;
+            width: auto;
+            height: auto;
+            max-width: 95%; 
+            max-height: 95%; 
+            object-fit: contain; 
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+        }
+
+        .swiper-button-next, .swiper-button-prev { color: var(--primary) !important; }
+        .swiper-pagination-bullet-active { background: var(--primary) !important; }
+
+        /* GALERİ VE GRID AYARLARI */
+        .container { max-width: 1400px; margin: 60px auto; padding: 0 15px; }
+        .section-title { margin-bottom: 40px; font-family: 'Montserrat'; font-size: 2.2rem; text-align: center; color: var(--primary); }
+        
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 20px; 
+        }
+
+        .media-card { 
+            border-radius: 15px; 
+            overflow: hidden; 
+            background: #111;
+            aspect-ratio: 1/1; 
+            border: 1px solid #222;
+            transition: transform 0.3s;
+        }
+        .media-card:hover { transform: scale(1.02); }
+        .media-card img, .media-card video { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+
+        /* MOBİL UYUMLULUK SORGULARI */
+        @media (max-width: 768px) {
+            .slider-section { height: 50vh; margin-top: 65px; }
+            .section-title { font-size: 1.6rem; margin-bottom: 25px; }
+            
+            /* TELEFONDA YAN YANA 2 VİDEO */
+            .gallery-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 10px; /* Mobilde boşluğu biraz azalttık */
+            }
+            
+            .media-card { border-radius: 10px; }
+            .logo { font-size: 1.1rem; }
+            .back-btn { padding: 6px 15px; font-size: 0.8rem; }
+        }
+
+        @media (max-width: 400px) {
+            /* Çok küçük ekranlar için yazı boyutunu biraz daha küçültelim */
+            .section-title { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">KILIÇ TESİSAT</div>
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> GERİ</a>
+    </header>
+
+    <div class="slider-section">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-bg-blur" style="background-image: url('image.jpeg');"></div>
+                    <img src="image.jpeg">
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-bg-blur" style="background-image: url('banyo.jpeg');"></div>
+                    <img src="banyo.jpeg">
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-bg-blur" style="background-image: url('dogalgaz.jpeg');"></div>
+                    <img src="dogalgaz.jpeg">
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-bg-blur" style="background-image: url('mekanik.jpeg');"></div>
+                    <img src="mekanik.jpeg">
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-bg-blur" style="background-image: url('su.jpeg');"></div>
+                    <img src="su.jpeg">
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-bg-blur" style="background-image: url('yangin.jpg');"></div>
+                    <img src="yangin.jpg">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">UYGULAMALARIMIZ</h2>
+        <div class="gallery-grid">
+            <div class="media-card"><img src="afıs1.jpeg"></div>
+            <div class="media-card"><img src="afıs2.jpeg"></div>
+            <div class="media-card"><img src="afıs3.jpeg"></div>
+            <div id="videoContainer" style="display: contents;"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            grabCursor: true,
+            keyboard: true,
+            speed: 800,
+            autoplay: { 
+                delay: 3000,
+                disableOnInteraction: false 
+            },
+            pagination: { 
+                el: ".swiper-pagination", 
+                clickable: true,
+                dynamicBullets: true 
+            },
+            navigation: { 
+                nextEl: ".swiper-button-next", 
+                prevEl: ".swiper-button-prev" 
+            },
+        });
+
+        const videoContainer = document.getElementById('videoContainer');
+        for (let i = 1; i <= 12; i++) {
+            const card = document.createElement('div');
+            card.className = 'media-card';
+            card.innerHTML = `<video src="urun${i}.mp4" loop muted playsinline onclick="this.paused ? this.play() : this.pause()"></video>`;
+            videoContainer.appendChild(card);
+        }
+    </script>
+</body>
+</html>
