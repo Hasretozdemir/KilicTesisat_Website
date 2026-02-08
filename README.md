@@ -3,7 +3,7 @@
 Bu proje, İnegöl'de faaliyet gösteren **Kılıç Tesisat** işletmesi için geliştirilmiş, modern, kullanıcı dostu ve tam uyumlu (responsive) bir kurumsal web sitesidir. Bir bilgisayar programcılığı öğrencisi olarak geliştirdiğim bu çalışma, gerçek bir işletmenin ihtiyaçlarına yönelik profesyonel bir çözüm sunmayı amaçlamaktadır.
 
 ## 🚀 Canlı Önizleme
-Projenin canlı haline buradan ulaşabilirsiniz: [kilictesisatt.com]
+Projenin canlı haline buradan ulaşabilirsiniz: [https://kilictesisatt.com]
 
 ## 📱 Proje Özellikleri
 - **Tam Responsive Tasarım:** Mobil, tablet ve masaüstü cihazlarla %100 uyumlu yapı.
